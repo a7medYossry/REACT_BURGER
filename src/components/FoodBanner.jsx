@@ -12,7 +12,8 @@ export default function FoodBanner() {
                 <div className="super-delicious">
                     <h3 className="crispy">CRISPY, EVERY BITE TASTE
                     </h3>
-                    <h1 className="super">SUPER
+                    <h1 className="super">
+                        SUPER<br/>
                         DELICIOUS
                     </h1>
                     <div className="decorations">

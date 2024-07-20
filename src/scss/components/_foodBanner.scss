@@ -1,11 +1,182 @@
-.food-banner{
+.food-banner {
     display: grid;
-    gap: 1vw;
-    grid-template-columns: 1fr 2fr; /* 1fr for banner1, 2fr for banner2 */
-    .banner1{
+    gap: 2vw;
+    grid-template-columns: 1.5fr 2fr;
+    padding: $global-padding;
+    margin-top: $global-margin;
 
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 4vw;
     }
-    .banner2{
 
+    .banner1,
+    .banner2 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        padding: clamp(40px, 4vw, 30vw);
+        height: clamp(262px, 20vw, 30vw);
+
+        &.banner1 {
+            background-image: url("src/images/homePage/foodBanner/offer-bg.png");
+            border-radius: 20px;
+
+            .super-delicious {
+                .crispy {
+                    color: $red-color;
+                    font-size: clamp(12px, 1.2vw, 30vw);
+                }
+
+                .super {
+                    position: relative;
+                    z-index: 1;
+                    color: $secondary-color;
+                    font-size: clamp(32px, 3.5vw, 30vw);
+                }
+
+                .decorations {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: clamp(42px, 1.9vw, 30vw);
+                        right: clamp(23px, 8.5vw, 30vw);
+                        scale: 0.7;
+                        animation: scaling 4s ease-in-out infinite;
+
+                        @keyframes scaling {
+
+                            0%,
+                            100% {
+                                scale: 0.5;
+                            }
+
+                            50% {
+                                scale: 0.7;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .banner1-img {
+                position: relative;
+
+                img {
+                    position: absolute;
+
+                    &:first-child {
+                        top: clamp(-31px, -5vw, 30vw);
+                        right: -12.1vw;
+                        scale: 0.8;
+                        animation: rotation 5s ease-in-out infinite;
+
+                        @keyframes rotation {
+
+                            0%,
+                            100% {
+                                transform: rotate(13deg);
+                            }
+
+                            50% {
+                                transform: rotate(40deg);
+                            }
+                        }
+
+                        @include mobile {
+                            left: clamp(12px, -12.1vw, 30vw);
+                        }
+                    }
+
+                    &:last-child {
+                        top: clamp(29px, 2vw, 30vw);
+                        right: -16.9vw;
+                        scale: 0.9;
+                        transition: scale 1s ease-in-out;
+
+                        @include mobile {
+                            left: clamp(-194px, -16.9vw, 30vw);
+                            scale: 0.6;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .banner1-img img:last-child {
+                    scale: 1;
+
+                    @include mobile {
+                        scale: 0.6;
+                    }
+                }
+            }
+        }
+
+        &.banner2 {
+            background-image: url("src/images/homePage/foodBanner/pizza-bg1.png");
+            border-radius: 15px;
+
+            .super-delicious-img {
+                position: relative;
+
+                img {
+                    position: absolute;
+
+                    @include mobile {
+                        scale: 0.5;
+                        left: -18.8vw;
+                    }
+                }
+            }
+
+            &:hover {
+                .banner2-img .pizza-2-img img {
+                    scale: 0.9;
+
+                    @include mobile {
+                        scale: 0.6;
+                    }
+                }
+            }
+
+            .banner2-img {
+                .decorations {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: -2vw;
+                        right: -42vw;
+
+                        @include mobile {
+                            top: -1vw;
+                            right: -80vw;
+                            scale: 0.9;
+                        }
+                    }
+                }
+
+                .pizza-2-img {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: 1vw;
+                        left: 19.9vw;
+                        scale: 0.8;
+                        transition: scale 1s ease-in-out;
+
+                        @include mobile {
+                            scale: 0.6;
+                            top: 1vw;
+                            left: 14.899999999999999vw;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
