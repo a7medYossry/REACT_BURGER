@@ -1,0 +1,34 @@
+//mixins
+
+
+// Mixin for tablet size
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+// Mixin for mobile size
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+// Mixin for desktop size
+@mixin desktop {
+  @media (max-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+@mixin mini-desktop {
+  @media (max-width: $breakpoint-mini-desktop) {
+    @content;
+  }
+}
+@mixin menu-cart{
+  @media (max-width: $breakpoint-menu-cart) {
+    @content;
+  }
+}
+

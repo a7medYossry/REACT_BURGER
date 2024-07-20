@@ -1,0 +1,254 @@
+.popularFoodItems {
+    padding: $global-padding;
+    margin-top: $global-margin;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .text {
+            .top {
+                font-size: 1.5vw;
+                color: $red-color;
+            }
+
+            .bottom {
+                font-size: 4vw;
+            }
+        }
+
+        .food-list-buttons {
+            display: flex;
+            gap: 2vw;
+            ;
+
+            .right {
+                cursor: pointer;
+                border: 0;
+                padding: 0;
+                height: 5vw;
+                width: 5vw;
+                border-radius: 200px;
+                font-size: 1.4vw;
+                color: $secondary-color;
+                background-color: $red-color;
+                transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+                &:hover {
+                    color: $red-color;
+                    background-color: $secondary-color;
+                }
+            }
+
+            .left {
+                cursor: pointer;
+                border: 0;
+                padding: 0;
+                height: 5vw;
+                width: 5vw;
+                border-radius: 200px;
+                font-size: 1.4vw;
+                color: $red-color;
+                transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+                &:hover {
+                    background-color: $red-color;
+                    background-color: $secondary-color;
+                }
+
+            }
+        }
+
+
+    }
+
+    .food-list {
+        & {
+            display: flex;
+            justify-content: space-around;
+            gap: 2vw;
+            overflow: hidden;
+            margin-top: $global-margin;
+            position: relative;
+
+            &.active-next{
+                .food-item {
+                    transition: transform 0.5s ease-in-out;
+                    transform: translatex(-20vw);
+                }
+            }
+            &.active-previous{
+                .food-item{
+                    transition: transform 0.5s ease-in-out;
+                    transform:translatex(20vw) ;
+                }
+            }
+        }
+
+        .food-item {
+            & {
+                transform: translatex(0vw);
+                width: 10vw;
+                cursor: pointer;
+                background-color: white;
+                padding: 4.1vw;
+                padding-top: 5vw;
+                display: flex;
+                flex-direction: column;
+                gap: 2vw;
+                align-items: center;
+                text-align: center;
+                border-radius: 1vw;
+                position: relative;
+                top: 0;
+                left: 0;
+                justify-content: space-between;
+                transition: background-color 0.5s ease-in-out;
+            }
+
+
+            .food-slogan-1,
+            .food-slogan-2 {
+                position: absolute;
+                left: -200vw;
+                opacity: 0;
+                transition: opacity .5s ease-in-out;
+                color: $secondary-color;
+                height: 3.5vw;
+            }
+
+            * {
+                transition: background-color 0.5s ease-in-out;
+
+            }
+
+            .img-and-decoration {
+                position: relative;
+                height: 10vw;
+                width: 10vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .food-img {
+                    height: 10vw;
+                    z-index: 1;
+                }
+
+                .decor1-top,
+                .decor2-top,
+                .decor1-bottom,
+                .decor2-bottom {
+                    position: absolute;
+                    transform: translate(0vw, -1vw) rotate(347deg);
+                    transition: transform 0.5s ease-in-out;
+                    z-index: 0;
+                }
+
+
+            }
+
+
+            .line {
+                width: 4vw;
+                height: 0.15vw;
+                background-color: $red-color;
+            }
+
+            .name {
+                position: relative;
+                height: 3.5vw;
+                width: 5vw;
+                font-weight: 800;
+                font-size: 1.7vw;
+                transition: opacity .5s ease-in-out;
+                span{
+                    
+                    position: absolute;
+                    width: 20vw;
+                    top: 0;
+                    left: -7.5vw;
+
+                }
+
+            }
+
+            .numOfProducts {
+                font-size: 1.2vw;
+                font-weight: 600;
+                color: $red-color;
+                margin-top: -1vw;
+                position: relative;
+                height: 3.5vw;
+                transition: opacity .5s ease-in-out;
+                opacity: 100%;
+            }
+
+            &:hover {
+                background-color: $yellow-color;
+
+                .img-and-decoration {
+                    .decor1-top {
+                        transform: translate(6vw, -5vw) rotate(297deg) scaleX(-1);
+
+                    }
+
+                    .decor2-top {
+                        transform: translate(5vw, -7vw) rotate(300deg);
+                    }
+
+                    .decor1-bottom {
+                        transform:  translate(-5vw, 7vw) rotate(347deg)
+                    }
+
+                    .decor2-bottom {
+                        transform: translate(-6vw, 5vw) rotate(345deg) scaleX(-1);
+                    }
+                }
+
+                .line {
+                    background-color: $secondary-color;
+                }
+
+                .numOfProducts {
+                    position: absolute;
+                    top: 3vw;
+                    left: 2vw;
+                    color: $secondary-color;
+                    opacity: 100%;
+
+                }
+
+                .name {
+                    position: absolute;
+                    opacity: 0;
+                    display: none;
+                    top: 19.9vw;
+                }
+
+                .food-slogan-1,
+                .food-slogan-2 {
+                    // display: block;
+                    position: relative;
+                    opacity: 100%;
+                    left: 0;
+                }
+
+                .food-slogan-1 {
+                    font-size: 3vw;
+                    font-weight: 900;
+                    top: -1vw;
+                }
+
+                .food-slogan-2 {
+                    font-size: 1.5vw;
+                    font-weight: 900;
+                    margin-top: -1vw;
+
+                }
+            }
+        }
+
+
+    }
+}

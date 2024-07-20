@@ -1,0 +1,92 @@
+.upper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $global-padding;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 500;
+    position: relative;
+    z-index: -1;
+    font-size: clamp(14px, 1.3vw, 2vw);
+    @include mini-desktop{
+        display: none;
+    }
+
+    .right-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 25vw; 
+        background-color: $primary-color;
+        z-index: -1;
+    }
+
+    .left {
+
+        span {
+            &.percent {
+                color: $red-color;
+                margin-right: 0.2vw;
+            }
+
+            &.truck {
+                color: $red-color;
+                margin-right: 0.5vw;
+            }
+
+            margin-right: 2vw;
+            
+            color: #333;
+        }
+    }
+
+    .right {
+        border-left: 1px solid $border-color;
+        padding-left: 25px;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+
+        .search-bar {
+            font-size: clamp(14px, 1.6vw, 2vw);
+            display: flex;
+            align-items: center;
+
+            input {
+                font-size: clamp(14px, 1.4vw, 2vw);
+                padding:  clamp(10px, 1.5vw, 1vw) 0;
+                padding-right: 3.5vw;
+                background-color: transparent;
+                outline: none;
+                width: 10vw;
+                border: none;
+                border-radius: 0;
+                &::placeholder {
+                    color: $primary-color; 
+                }
+            }
+
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            a {
+                color: $secondary-color;
+                margin: 0 1vw;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: $red-color;
+                }
+            }
+        }
+    }
+}

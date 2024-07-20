@@ -1,0 +1,19 @@
+// main.scss
+
+// Import variables first, so they can be used in other files
+@import './variables';
+
+// Import mixins
+@import './mixins';
+
+// Import base styles (reset, typography, etc.)
+@import './base';
+
+// Import  component styles
+@import './components/header';
+@import './components/upperHeader';
+@import './components/navigation';
+@import './components/hero';
+@import './components/popularFoodItems';
+@import './components/foodBanner';
+
